@@ -1,5 +1,8 @@
 html {
 	background-color: #DAE1E3;
 	font-family: Verdana, Arial, Times, serif;
+}
 
+p {
+	background-color: yellow;
 }
