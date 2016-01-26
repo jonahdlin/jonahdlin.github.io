@@ -23,6 +23,7 @@ a:hover {
 	padding: 3em;
 	padding-top: 4.2em;
 	padding-bottom: 4.2em;
+	background-color: #1A1A1A;
 	width: 100%;
 	table-layout: fixed;
 }
@@ -47,8 +48,7 @@ a:hover {
 	padding: 2em;
 	padding-right: 3.5em;
 	padding-left: 3.5em;
-	font-size: 5em;
+	font-size: 4em;
 	text-align: center;
-	font-variant: small-caps;
 	background-color: #1A1A1A;
 }
