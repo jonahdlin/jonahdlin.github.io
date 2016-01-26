@@ -12,6 +12,7 @@ html, body {
 }
 
 .neutralLink {
+	color: #EDEDED;
 	text-decoration: none;
 }
 
@@ -48,7 +49,7 @@ a:hover {
 	min-height: 100%;
 	border-bottom: 3px solid #D99B45;
 	margin: 0;
-	background-color: #1A1A1A;
+	background-color: #3B3B3B;
 	border-radius: 3px;
 }
 
