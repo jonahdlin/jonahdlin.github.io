@@ -1,4 +1,15 @@
-﻿body {
+﻿html {
+	background-color: background: linear-gradient(
+  to bottom,
+  #5d9634,
+  #5d9634 50%,
+  #538c2b 50%,
+  #538c2b
+);
+}
+
+
+body {
 	background-color: yellow; 
 	font-family: Verdana;
 }
