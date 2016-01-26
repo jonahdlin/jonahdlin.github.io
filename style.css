@@ -6,8 +6,13 @@
 	color: #EDEDED;
 }
 
+a:hover {
+	color: #D6D6D6;
+}
+
 #headerTable {
 	padding: 3em;
+	padding-top: 1.2em;
 	width: 100%;
 }
 
@@ -29,5 +34,5 @@
 
 .neutralLink {
 	color: #EDEDED;
-	font-style: normal;
+	text-decoration: none;
 }
