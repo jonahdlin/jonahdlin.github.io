@@ -6,17 +6,17 @@
 	color: #EDEDED;
 }
 
-head {
-	background-color: #1A1A1A;
-}
-
 a:hover {
-	color: #B0B0B0;
+	color: #BDBDBD;
 }
 
 .neutralLink {
 	color: #EDEDED;
 	text-decoration: none;
+}
+
+.orangeHeader {
+	color: #D99B45;
 }
 
 #headerTable {
