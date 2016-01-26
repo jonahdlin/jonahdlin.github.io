@@ -1,9 +1,13 @@
-﻿body {
+﻿html {
 	font-family: sans-serif;
 	margin: 0;
 	background: url("office.png");
 	background-color: #8A8A8A;
 	color: #EDEDED;
+}
+
+head {
+	background-color: #1A1A1A;
 }
 
 a:hover {
@@ -19,7 +23,6 @@ a:hover {
 	padding: 3em;
 	padding-top: 4.2em;
 	padding-bottom: 4.2em;
-	background-color: #1A1A1A;
 	width: 100%;
 	table-layout: fixed;
 }
@@ -42,6 +45,8 @@ a:hover {
 
 #mainHeader {
 	padding: 2em;
+	padding-right: 3.5em;
+	padding-left: 3.5em;
 	font-size: 5em;
 	text-align: center;
 	font-variant: small-caps;
