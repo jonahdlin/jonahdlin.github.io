@@ -23,17 +23,9 @@ a:hover {
 	border-color: #D99B45;
 }
 
-.mainHeader {
-	padding: 2em;
-	padding-right: 4em;
-	padding-left: 4em;
-	font-size: 4.3em;
-	text-align: center;
-	background-color: #1A1A1A;
-}
-
 #headerContainer {
 	background-color: #1A1A1A;
+	height: 100%;
 }
 
 #headerTable {
@@ -63,4 +55,13 @@ a:hover {
 	vertical-align: middle;
 	font-size: 1.7em;
 	text-align: right;
+}
+
+#mainHeader {
+	padding: 2em;
+	padding-right: 5em;
+	padding-left: 5em;
+	font-size: 4.3em;
+	text-align: center;
+	background-color: #1A1A1A;
 }
