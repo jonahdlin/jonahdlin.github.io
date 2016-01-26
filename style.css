@@ -19,12 +19,13 @@ a:hover {
 	color: #D99B45;
 }
 
-.fakeTable {
-	display: table;
-}
-
-.fakeTable-r {
-	display: table-row;
+.mainHeader {
+	padding: 2em;
+	padding-right: 4em;
+	padding-left: 4em;
+	font-size: 4.3em;
+	text-align: center;
+	background-color: #1A1A1A;
 }
 
 #headerTable {
@@ -38,31 +39,16 @@ a:hover {
 
 #leftHeader {
 	font-size: 2.5em;
-	float: left;
-	display: table-cell;
 	font-weight: bold;
 	text-align: left;
 }
 
 #middleHeader {
 	font-size: 1.2em;
-	display: inline-block;
-	display: table-cell;
 	text-align: center;
 }
 
 #rightHeader {
 	font-size: 1.7em;
-	float: right;
-	display: table-cell;
 	text-align: right;
-}
-
-#mainHeader {
-	padding: 2em;
-	padding-right: 3.5em;
-	padding-left: 3.5em;
-	font-size: 4em;
-	text-align: center;
-	background-color: #1A1A1A;
 }
