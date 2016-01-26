@@ -24,6 +24,18 @@ a:hover {
 	color: #D99B45;
 }
 
+.sectionContainer {
+	width: 100%;
+	margin: 0;
+	padding: 0.2em;
+}
+
+.sectionHeader {
+	font-weight: bold;
+	font-size: 2.4em;
+	font-variant: small-caps;
+}
+
 #headerContainer {
 	width: 100%;
 	height: 100%;
