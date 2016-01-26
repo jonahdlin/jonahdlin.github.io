@@ -7,20 +7,24 @@
 }
 
 #headerTable {
+	padding: 3em;
 	width: 100%;
 }
 
 #leftHeader {
 	font-size: 2.5em;
 	font-weight: bold;
+	text-align: left;
 }
 
 #middleHeader {
 	font-size: 1.2em;
+	text-align: center;
 }
 
 #rightHeader {
 	font-size: 1.7em;
+	text-align: right;
 }
 
 .neutralLink {
