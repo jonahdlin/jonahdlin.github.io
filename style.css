@@ -63,11 +63,11 @@ a:hover {
 }
 
 #mainHeader {
-	padding-top: 40%;
-	padding-bottom: 40%;
+	padding-top: 3em;
+	padding-bottom: 3em;
 	padding-right: 5em;
 	padding-left: 5em;
-	font-size: 20%;
+	font-size: 4em;
 	text-align: center;
 	background-color: #1A1A1A;
 }
