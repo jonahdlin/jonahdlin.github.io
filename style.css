@@ -5,3 +5,21 @@
 	background-color: #8A8A8A;
 	color: #EDEDED;
 }
+
+#leftHeader {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+#middleHeader {
+	font-size: 1.2em;
+}
+
+#rightHeader {
+	font-size: 1.7em;
+}
+
+.neutralLink {
+	color: #EDEDED;
+	font-style: normal;
+}
