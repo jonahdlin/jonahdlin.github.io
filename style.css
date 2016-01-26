@@ -20,12 +20,9 @@ a:hover {
 	color: #D99B45;
 }
 
-.orangeLine {
-	border-color: #D99B45;
-}
-
 #headerContainer {
 	min-height: 100%;
+	border-bottom: 2px solid #D99B45;
 	margin: 0;
 	background-color: #1A1A1A;
 	border-radius: 3px;
