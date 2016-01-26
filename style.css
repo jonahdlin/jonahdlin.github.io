@@ -10,6 +10,11 @@ a:hover {
 	color: #B0B0B0;
 }
 
+.neutralLink {
+	color: #EDEDED;
+	text-decoration: none;
+}
+
 #headerTable {
 	padding: 3em;
 	padding-top: 4.2em;
@@ -35,7 +40,9 @@ a:hover {
 	text-align: right;
 }
 
-.neutralLink {
-	color: #EDEDED;
-	text-decoration: none;
+#mainHeader {
+	padding: 5.7em;
+	font-size: 7em;
+	font-variant: small-caps;
+	background-color: #1A1A1A;
 }
