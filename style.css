@@ -11,7 +11,7 @@ html, body {
 	padding: 0;
 }
 
-a {
+.neutralLink {
 	text-decoration: none;
 }
 
@@ -25,7 +25,7 @@ a:hover {
 
 .sectionContainer {
 	width: 100%;
-	margin: 2;
+	margin: 0;
 	padding: 1em;
 }
 
