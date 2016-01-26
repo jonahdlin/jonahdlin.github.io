@@ -56,7 +56,8 @@ a:hover {
 }
 
 #mainHeader {
-	padding: 2em;
+	padding-top: 1em;
+	padding-bottom: 2em;
 	padding-right: 5em;
 	padding-left: 5em;
 	font-size: 4.3em;
