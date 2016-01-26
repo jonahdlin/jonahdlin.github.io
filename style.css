@@ -24,6 +24,7 @@ a:hover {
 }
 
 #headerContainer {
+	min-height: 100%;
 	margin: 0;
 	background-color: #1A1A1A;
 	border-radius: 3px;
