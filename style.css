@@ -10,28 +10,6 @@ a:hover {
 	color: #BDBDBD;
 }
 
-/*Not my code*/
-/*----------------------------*/
-hr.style-seven {
-    height: 30px;
-    border-style: solid;
-    border-color: #D99B45;
-    border-width: 1px 0 0 0;
-    border-radius: 20px;
-}
-
-hr.style-seven:before {
-    display: block;
-    content: "";
-    height: 30px;
-    margin-top: -31px;
-    border-style: solid;
-    border-color: #D99B45;
-    border-width: 0 0 1px 0;
-    border-radius: 20px;
-}
-/*----------------------------*/
-
 .neutralLink {
 	color: #EDEDED;
 	text-decoration: none;
@@ -42,7 +20,7 @@ hr.style-seven:before {
 }
 
 .orangeLine {
-	color: #D99B45;
+	border-color: #D99B45;
 }
 
 .mainHeader {
@@ -51,6 +29,10 @@ hr.style-seven:before {
 	padding-left: 4em;
 	font-size: 4.3em;
 	text-align: center;
+	background-color: #1A1A1A;
+}
+
+#headerContainer {
 	background-color: #1A1A1A;
 }
 
