@@ -38,6 +38,7 @@ a:hover {
 
 #leftHeader {
 	font-size: 2.5em;
+	float: left;
 	display: table-cell;
 	font-weight: bold;
 	text-align: left;
@@ -45,12 +46,14 @@ a:hover {
 
 #middleHeader {
 	font-size: 1.2em;
+	display: inline-block;
 	display: table-cell;
 	text-align: center;
 }
 
 #rightHeader {
 	font-size: 1.7em;
+	float: right;
 	display: table-cell;
 	text-align: right;
 }
