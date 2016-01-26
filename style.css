@@ -19,12 +19,10 @@ a:hover {
 	color: #D99B45;
 }
 
-.orangeLine {
-	border-color: #D99B45;
-}
-
 #headerContainer {
 	background-color: #1A1A1A;
+	border-radius: 3px;
+	border: 1px solid #D99B45;
 }
 
 #headerTable {
