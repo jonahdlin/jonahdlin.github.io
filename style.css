@@ -41,8 +41,9 @@ a:hover {
 }
 
 #mainHeader {
-	padding: 5.7em;
-	font-size: 7em;
+	padding: 2em;
+	font-size: 5em;
+	text-align: center;
 	font-variant: small-caps;
 	background-color: #1A1A1A;
 }
