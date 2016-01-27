@@ -1,0 +1,6 @@
+- make "OTHER HEADER" something useful
+- fix stupid text in the middle of the color thing
+- add notes
+- add contact info
+- add smooth scrolling (however the fuck that's done...)
+- if possible, fix the welcomeContainer div to properly scale/fit the proper amount of page

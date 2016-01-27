@@ -1,7 +1,7 @@
 ﻿html {
-	font-family: sans-serif;
+	font-family: Verdana, sans-serif;
 	margin: 0;
-	background: url("office2.png");
+	background: url("style_resources/office2.png");
 	background-color: #8A8A8A;
 	color: #EDEDED;
 }
@@ -17,7 +17,7 @@ html, body {
 }
 
 a:hover {
-	color: #BDBDBD;
+	color: #878787;
 }
 
 .orangeFont {
@@ -40,32 +40,35 @@ a:hover {
 .sectionParagraph {
 	padding-left: 1em;
 	padding-right: 1em;
-	font-size: 2em;
+	font-size: 1.6em;
+}
+
+.notesContainer {
+	border-radius: 15px;
+	background-color: #C4C4C4;
+	border: 2px solid #D99B45;
+	height: 100px;
+	width: 100px;
 }
 
 #headerContainer {
 	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	border-bottom: 3px solid #D99B45;
 	margin: 0;
-	background-color: #1C1C1C;
-	border-radius: 3px;
+	overflow-x: auto;
 }
 
 #headerTable {
-	padding: 3em;
 	vertical-align: middle;
-	padding-top: 4.2em;
 	background-color: #1C1C1C;
 	width: 100%;
+	padding: 0 4.2em;
+	height: 9.1em;
 	table-layout: fixed;
 }
 
 #leftHeader {
 	vertical-align: middle;
 	font-size: 2.9em;
-	font-weight: bold;
 	text-align: left;
 }
 
@@ -81,12 +84,24 @@ a:hover {
 	text-align: right;
 }
 
-#mainHeader {
-	padding-top: 3em;
-	padding-bottom: 3em;
+#welcomeContainer {
+	display: table;
+	overflow: hidden;
+	width: 100%;
+	height: 84%;
+	border-bottom: 3px solid #D99B45;
+	border-top: 3px solid #D99B45;
+	background: url("style_resources/aurora_minimalistic.png");
+}
+
+#innerWelcomeContainer {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#welcomeHeader {
 	padding-right: 5em;
 	padding-left: 5em;
 	font-size: 4em;
 	text-align: center;
-	background-color: #1C1C1C;
 }
