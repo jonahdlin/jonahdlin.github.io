@@ -51,13 +51,13 @@ a:hover {
 	width: 100px;
 }
 
-#headerContainer {
+.headerContainer {
 	width: 100%;
 	margin: 0;
 	overflow-x: auto;
 }
 
-#headerTable {
+.headerTable {
 	vertical-align: middle;
 	background-color: #1C1C1C;
 	width: 100%;
@@ -66,25 +66,26 @@ a:hover {
 	table-layout: fixed;
 }
 
-#leftHeader {
+.leftHeader {
 	vertical-align: middle;
 	font-size: 2.9em;
 	text-align: left;
 }
 
-#middleHeader {
+.middleHeader {
 	vertical-align: middle;
 	font-size: 1.2em;
 	text-align: center;
+	white-space: pre;
 }
 
-#rightHeader {
+.rightHeader {
 	vertical-align: middle;
 	font-size: 1.7em;
 	text-align: right;
 }
 
-#welcomeContainer {
+.welcomeContainer {
 	display: table;
 	overflow: hidden;
 	width: 100%;
@@ -94,12 +95,12 @@ a:hover {
 	background: url("style_resources/aurora_minimalistic.png");
 }
 
-#innerWelcomeContainer {
+.innerWelcomeContainer {
 	display: table-cell;
 	vertical-align: middle;
 }
 
-#welcomeHeader {
+.welcomeHeader {
 	padding-right: 5em;
 	padding-left: 5em;
 	font-size: 4em;
