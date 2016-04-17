@@ -3,7 +3,7 @@ Page Layout
 ---------------------------*/
 
 html {
-	font-family: Verdana, sans-serif;
+	font-family: "Lato", Verdana, sans-serif;
 	margin: 0;
 	background: url("style_resources/fabric_of_squares_gray.png");
 	background-color: #8A8A8A;
@@ -30,8 +30,8 @@ html, body {
 #innerPageContainer {
 	align-self: middle;
 	width: 50vmax;
-	/*padding-right: 5px;
-	padding-left: 5px;*/
+	padding-right: 5px;
+	padding-left: 5px;
 }
 
 /*---------------------------
@@ -97,9 +97,9 @@ Section classes
 }
 
 .content {
-	padding-top: 7px;
-	padding-left: 10px;
+	padding: 10px;
 	margin: 0;
+	font-size: 1.7vmin;
 }
 
 /*---------------------------
@@ -108,12 +108,6 @@ Individual section styling
 
 #about_content {
 	height: 25vh;
-	position: relative;
-}
-
-#about_text {
-	position: absolute;
-	font-size: 1vh;
 }
 
 #resume_content {
@@ -139,9 +133,92 @@ Individual section styling
 }
 
 #projects_content {
-	height: 25vh;
+	height: 30vh;
+	display: flex;
+	justify-content: center;
 }
 
 #contact_content {
 	height: 10vh;
+}
+
+/*---------------------------
+Project divs
+---------------------------*/
+
+.project_button {
+	box-shadow: 1px 1px 2px;
+	align-self: center;
+	width: 47%;
+	margin-right: 2%;
+	height: 27vh;
+
+	display: inline-block;
+	cursor: pointer;
+
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.project_title {
+	align-self: flex-start;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	background-color: #969696;
+	width: 100%;
+	height: 5vh;
+}
+
+.project_title > p {
+	align-self: center;
+}
+
+.slide_container {
+	height: 22vh;
+	display: flex;
+}
+
+.slide {
+	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+
+	background-color: #7D7D7D;
+	width: 100%;
+	display: none;
+}
+
+.slide > p {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#montyhall {
+	background-color: #00B521;
+	background-image: url("style_resources/congruent.png");
+	margin-left: 2%;
+}
+
+#montyhall:hover {
+	background-color: #008218;
+}
+
+#montyhall:active {
+	background-color: #006E14;
+}
+
+#battleship {
+	background-color: #00ACBF;
+	background-image: url("style_resources/edges.png");
+}
+
+#battleship:hover {
+	background-color: #0291A1;
+}
+
+#battleship:active {
+	background-color: #007E8C;
 }

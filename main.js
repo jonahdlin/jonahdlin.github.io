@@ -34,4 +34,12 @@
 			$(this).html('<p id="contact_mm_p">-</p>');
 		}
 	});
+
+	$(".project_button").hover(function(){
+		$("#" + this.id + "_slide").slideToggle();
+	});
+
+	$(".project_button").click(function(){
+		window.location.href = "jonahdlin.com/" + this.id;
+	});
 });
