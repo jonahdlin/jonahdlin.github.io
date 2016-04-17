@@ -40,6 +40,6 @@
 	});
 
 	$(".project_button").click(function(){
-		window.location.href = "jonahdlin.com/" + this.id;
+		window.location.href = this.id;
 	});
 });
