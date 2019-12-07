@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { borderBox, flexCenter } from './mixins';
+import { flexCenter } from '../constants/mixins';
 
 const HeaderPhotoUnstyled = ({ className }) => {
   return (
@@ -13,7 +13,6 @@ const HeaderPhotoUnstyled = ({ className }) => {
 }
 
 const HeaderPhoto = styled(HeaderPhotoUnstyled)`
-${borderBox}
 width: 100px;
 height: 100px;
 border: 1px solid black;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { flexCenter } from '../constants/mixins';
 
 const HeaderUnstyled = ({ className, children }) => {
   return (
@@ -10,7 +11,8 @@ const HeaderUnstyled = ({ className, children }) => {
 }
 
 const Header = styled(HeaderUnstyled)`
-width: 100%
+${flexCenter}
+width: 100%;
 `;
 
 export default Header;
