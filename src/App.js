@@ -15,7 +15,7 @@ const AppUnstyled = ({ className }) => {
         <HeaderText>Full Stack Developer</HeaderText>
       </Header>
       <Timeline>
-        <Event isLeft></Event>
+        <Event date={new Date('2011-10-10')} isLeft></Event>
         <Event></Event>
         <Event></Event>
         <Event isLeft></Event>

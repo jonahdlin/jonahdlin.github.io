@@ -10,9 +10,21 @@ const isElementEvent = reactElement => {
 
 const isEventLeftEvent = event => Boolean(event.props.isLeft);
 
+const compareDates = (date1, date2) => {
+  if (date1 < date2) {
+    return -1;
+  }
+  if (date1 > date2) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+
 const TimelineUnstyled = ({ className, children }) => {
   const childrenArray = Array.isArray(children) ? children : [children];
   let eventsArray = childrenArray.filter(child => isElementEvent(child));
+  eventsArray.sort(compareDates);
   const leftEvents = eventsArray.filter(child => isEventLeftEvent(child));
   const rightEvents = eventsArray.filter(child => !isEventLeftEvent(child));
   return (
