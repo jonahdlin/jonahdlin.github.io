@@ -6,7 +6,7 @@ import EventsContainer from './EventsContainer';
 
 const isElementEvent = reactElement => {
   return reactElement.type.displayName === 'Styled(EventUnstyled)';
-}
+};
 
 const isEventLeftEvent = event => Boolean(event.props.isLeft);
 
@@ -19,7 +19,7 @@ const compareDates = (date1, date2) => {
   }
   // a must be equal to b
   return 0;
-}
+};
 
 const TimelineUnstyled = ({ className, children }) => {
   const childrenArray = Array.isArray(children) ? children : [children];
@@ -34,12 +34,12 @@ const TimelineUnstyled = ({ className, children }) => {
       <EventsContainer>{rightEvents}</EventsContainer>
     </div>
   );
-}
+};
 
 const Timeline = styled(TimelineUnstyled)`
-${flexCenter}
-width: 100%;
-height: 300px;
+  ${flexCenter}
+  width: 100%;
+  height: 300px;
 `;
 
 export default Timeline;

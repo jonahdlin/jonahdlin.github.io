@@ -22,10 +22,8 @@ const AppUnstyled = ({ className }) => {
       </Timeline>
     </div>
   );
-}
+};
 
-const App = styled(AppUnstyled)`
-
-`;
+const App = styled(AppUnstyled)``;
 
 export default App;
