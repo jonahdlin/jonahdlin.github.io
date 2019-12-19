@@ -12,6 +12,3 @@ export const months = {
   10: 'November',
   11: 'December',
 };
-
-// really should be dynamically generated in Timeline.js
-export const totalPadding = 200;

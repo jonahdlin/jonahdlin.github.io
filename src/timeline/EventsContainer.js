@@ -7,6 +7,7 @@ const EventsContainerUnstyled = ({ className, children }) => (
 
 const EventsContainer = styled(EventsContainerUnstyled)`
   height: 100%;
+  width: 100%;
 `;
 
 export default EventsContainer;
