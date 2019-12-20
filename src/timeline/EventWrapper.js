@@ -16,9 +16,8 @@ const EventWrapper = styled(EventWrapperUnstyled)`
   position: relative;
   display: flex;
   justify-content: center;
-  border: 1px dashed green;
   :not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 `;
 

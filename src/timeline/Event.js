@@ -7,8 +7,10 @@ import {
   TIMELINE_EVENT_POINTER_SIDE_LENGTH,
   TIMELINE_ICON_DIAMETER,
   TIMELINE_ICON_OFFSET_FROM_TOP,
+  TIMELINE_EVENT_POINTER_RADIUS,
 } from '../constants/constants';
 import EventPointer from './EventPointer';
+import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
 
 const EventUnstyled = ({ className, date, children, isLeft }) => {
   const day = date.getDate() + 1;
@@ -16,9 +18,6 @@ const EventUnstyled = ({ className, date, children, isLeft }) => {
   const year = date.getFullYear();
   return (
     <div className={className}>
-      <div className="event-pointer-wrapper">
-        <EventPointer />
-      </div>
       <div className="event-content">{`${day} ${month}, ${year}`}</div>
     </div>
   );
@@ -28,25 +27,60 @@ const Event = styled(EventUnstyled)`
   position: relative;
   ${flexCenter};
   ${props => (props.isLeft ? 'margin-right: auto' : 'margin-left: auto')};
+  box-shadow: ${BOX_SHADOW};
+
   .event-content {
-    z-index: 3;
+    position: relative;
+    z-index: 10;
+    border: 1px solid black;
+    background-color: ${LIGHT_GREY_1};
     width: ${TIMELINE_EVENT_WIDTH}px;
     height: 100px;
-    background-color: blue;
-  }
+    padding: 10px;
 
-  .event-pointer-wrapper {
-    position: absolute;
-    z-index: 2;
-    top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
-      TIMELINE_ICON_DIAMETER / 2 -
-      TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;
-    ${props =>
-      props.isLeft
-        ? `left: ${TIMELINE_EVENT_WIDTH -
-            TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`
-        : `left: ${-TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`};
+    &::before {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      border: ${TIMELINE_EVENT_POINTER_RADIUS}px solid transparent;
+      position: absolute;
+      top: ${TIMELINE_ICON_OFFSET_FROM_TOP + 1}px;
+      ${props =>
+        props.isLeft
+          ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid black;
+      left: ${TIMELINE_EVENT_WIDTH - 2}px;`
+          : `border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid black;
+      left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS}px;`};
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      border: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid transparent;
+      position: absolute;
+      top: ${TIMELINE_ICON_OFFSET_FROM_TOP + 2}px;
+      ${props =>
+        props.isLeft
+          ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS -
+              1}px solid ${LIGHT_GREY_1};
+      left: ${TIMELINE_EVENT_WIDTH - 2}px;`
+          : `border-right: ${TIMELINE_EVENT_POINTER_RADIUS -
+              1}px solid ${LIGHT_GREY_1};
+      left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS + 2}px;`};
+    }
   }
 `;
-
+/*
+      top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
+        TIMELINE_ICON_DIAMETER / 2 -
+        TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;
+      ${props =>
+        props.isLeft
+          ? `left: ${TIMELINE_EVENT_WIDTH -
+              TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`
+          : `left: ${-TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`};
+          */
 export default Event;

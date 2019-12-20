@@ -9,6 +9,7 @@ const TimelineLineUnstyled = ({ className, children }) => (
 
 const TimelineLine = styled(TimelineLineUnstyled)`
   position: absolute;
+  top: 0;
   width: ${TIMELINE_LINE_THICKENSS}px;
   height: 100%;
   background-color: ${TIMELINE_LINE_COLOUR};

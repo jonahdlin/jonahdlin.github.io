@@ -48,13 +48,14 @@ const TimelineUnstyled = ({ className, children }) => {
 };
 
 const Timeline = styled(TimelineUnstyled)`
-  ${flexCenter}
+  ${flexCenter};
   position: relative;
   width: ${2 *
     (TIMELINE_EVENT_WIDTH +
       TIMELINE_EVENT_POINTER_RADIUS +
       TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON +
       TIMELINE_ICON_DIAMETER / 2)}px;
+  padding-top: 20px;
 `;
 
 export default Timeline;
