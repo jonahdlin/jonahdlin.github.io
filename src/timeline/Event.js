@@ -10,7 +10,7 @@ const EventUnstyled = ({ className, date, children, isLeft }) => {
   const year = date.getFullYear();
   return (
     <div className={className}>
-      <div class="event-pointer-wrapper">
+      <div className="event-pointer-wrapper">
         <EventPointer />
       </div>
       <div className="event-content">{`${day} ${month}, ${year}`}</div>

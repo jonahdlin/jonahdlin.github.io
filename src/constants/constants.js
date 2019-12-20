@@ -12,3 +12,5 @@ export const months = {
   10: 'November',
   11: 'December',
 };
+
+export const HEADER_PHOTO_WIDTH = 100;

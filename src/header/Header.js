@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flexCenter } from '../constants/mixins';
 
 const HeaderUnstyled = ({ className, children }) => {
   return <div className={className}>{children}</div>;
 };
 
 const Header = styled(HeaderUnstyled)`
-  ${flexCenter}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 100%;
+  height: 100px;
 `;
 
 export default Header;
