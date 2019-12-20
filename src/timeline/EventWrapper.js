@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import EventIcon from './EventIcon';
 
 const EventWrapperUnstyled = ({ className, children }) => {
   return (
     <div className={className}>
-      <div className="icon" />
+      <EventIcon />
       {children}
     </div>
   );
@@ -18,16 +19,6 @@ const EventWrapper = styled(EventWrapperUnstyled)`
   border: 1px dashed green;
   :not(:last-child) {
     margin-bottom: 10px;
-  }
-
-  .icon {
-    position: absolute;
-    top: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: red;
-    z-index: 10;
   }
 `;
 

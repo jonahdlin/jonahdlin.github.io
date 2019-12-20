@@ -24,6 +24,10 @@ const AppUnstyled = ({ className }) => {
   );
 };
 
-const App = styled(AppUnstyled)``;
+const App = styled(AppUnstyled)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default App;

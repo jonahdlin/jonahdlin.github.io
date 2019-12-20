@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { flexCenter } from '../constants/mixins';
-import { months } from '../constants/constants';
+import {
+  months,
+  TIMELINE_EVENT_WIDTH,
+  TIMELINE_EVENT_POINTER_SIDE_LENGTH,
+  TIMELINE_ICON_DIAMETER,
+  TIMELINE_ICON_OFFSET_FROM_TOP,
+} from '../constants/constants';
 import EventPointer from './EventPointer';
 
 const EventUnstyled = ({ className, date, children, isLeft }) => {
@@ -24,7 +30,7 @@ const Event = styled(EventUnstyled)`
   ${props => (props.isLeft ? 'margin-right: auto' : 'margin-left: auto')};
   .event-content {
     z-index: 3;
-    width: 300px;
+    width: ${TIMELINE_EVENT_WIDTH}px;
     height: 100px;
     background-color: blue;
   }
@@ -32,8 +38,14 @@ const Event = styled(EventUnstyled)`
   .event-pointer-wrapper {
     position: absolute;
     z-index: 2;
-    top: 15px;
-    ${props => (props.isLeft ? 'left: 290px;' : 'left: -10px;')};
+    top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
+      TIMELINE_ICON_DIAMETER / 2 -
+      TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;
+    ${props =>
+      props.isLeft
+        ? `left: ${TIMELINE_EVENT_WIDTH -
+            TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`
+        : `left: ${-TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`};
   }
 `;
 

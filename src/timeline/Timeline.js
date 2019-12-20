@@ -4,6 +4,12 @@ import { flexCenter } from '../constants/mixins';
 import TimelineLine from './TimelineLine';
 import EventsContainer from './EventsContainer';
 import EventWrapper from './EventWrapper';
+import {
+  TIMELINE_ICON_DIAMETER,
+  TIMELINE_EVENT_WIDTH,
+  TIMELINE_EVENT_POINTER_RADIUS,
+  TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON,
+} from '../constants/constants';
 
 const isElementEvent = reactElement => {
   return reactElement.type.displayName === 'Styled(EventUnstyled)';
@@ -44,7 +50,11 @@ const TimelineUnstyled = ({ className, children }) => {
 const Timeline = styled(TimelineUnstyled)`
   ${flexCenter}
   position: relative;
-  width: 680px;
+  width: ${2 *
+    (TIMELINE_EVENT_WIDTH +
+      TIMELINE_EVENT_POINTER_RADIUS +
+      TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON +
+      TIMELINE_ICON_DIAMETER / 2)}px;
 `;
 
 export default Timeline;

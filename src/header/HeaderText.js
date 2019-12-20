@@ -18,8 +18,8 @@ const HeaderText = styled(HeaderTextUnstyled)`
       : `
       justify-content: flex-start;
       left: calc(50% + ${HEADER_PHOTO_WIDTH / 2}px);`};
-  height: 100px;
-  border: 1px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export default HeaderText;
