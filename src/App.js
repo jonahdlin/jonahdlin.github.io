@@ -5,10 +5,12 @@ import Header from './header/Header';
 import HeaderText from './header/HeaderText';
 import Timeline from './timeline/Timeline';
 import Event from './timeline/Event';
+import Navigation from './navigation/Navigation';
 
 const AppUnstyled = ({ className }) => {
   return (
     <div className={className}>
+      <Navigation />
       <Header>
         <HeaderText isRightAligned>Jonah Dlin</HeaderText>
         <HeaderPhoto />

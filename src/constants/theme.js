@@ -1,3 +1,5 @@
+export const PRIMARY = '#47c2ff';
+
 export const DARK_GREY = '#404145';
 export const LIGHT_GREY_3 = '#dcdfe3';
 export const LIGHT_GREY_2 = '#e4e4e4';
