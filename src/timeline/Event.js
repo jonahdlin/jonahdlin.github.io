@@ -6,6 +6,7 @@ import {
   TIMELINE_EVENT_WIDTH,
   TIMELINE_ICON_OFFSET_FROM_TOP,
   TIMELINE_EVENT_POINTER_RADIUS,
+  TIMELINE_ICON_DIAMETER,
 } from '../constants/constants';
 import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
 
@@ -42,7 +43,9 @@ const Event = styled(EventUnstyled)`
       width: 0;
       border: ${TIMELINE_EVENT_POINTER_RADIUS}px solid transparent;
       position: absolute;
-      top: ${TIMELINE_ICON_OFFSET_FROM_TOP + 1}px;
+      top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
+        TIMELINE_ICON_DIAMETER / 2 -
+        TIMELINE_EVENT_POINTER_RADIUS}px;
       ${props =>
         props.isLeft
           ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_2};
@@ -58,7 +61,10 @@ const Event = styled(EventUnstyled)`
       width: 0;
       border: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid transparent;
       position: absolute;
-      top: ${TIMELINE_ICON_OFFSET_FROM_TOP + 2}px;
+      top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
+        TIMELINE_ICON_DIAMETER / 2 -
+        TIMELINE_EVENT_POINTER_RADIUS +
+        1}px;
       ${props =>
         props.isLeft
           ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS -
