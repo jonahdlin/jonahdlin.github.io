@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import EventIcon from './EventIcon';
 
-const EventWrapperUnstyled = ({ className, children }) => {
+const EventWrapperUnstyled = ({ className, children, type }) => {
   return (
     <div className={className}>
-      <EventIcon />
+      <EventIcon type={type} />
       {children}
     </div>
   );

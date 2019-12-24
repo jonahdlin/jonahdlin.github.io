@@ -1,3 +1,5 @@
+import { PRIMARY, LIGHT_GREY_1, PRIMARY_3, PRIMARY_2 } from './theme';
+
 export const months = {
   0: 'January',
   1: 'February',
@@ -11,6 +13,24 @@ export const months = {
   9: 'October',
   10: 'November',
   11: 'December',
+};
+
+export const eventTypeMap = {
+  work: {
+    iconName: 'work',
+    backgroundColour: PRIMARY,
+    colour: LIGHT_GREY_1,
+  },
+  music: {
+    iconName: 'music_note',
+    backgroundColour: PRIMARY_3,
+    colour: LIGHT_GREY_1,
+  },
+  education: {
+    iconName: 'school',
+    backgroundColour: PRIMARY_2,
+    colour: LIGHT_GREY_1,
+  },
 };
 
 export const HEADER_PHOTO_WIDTH = 150;

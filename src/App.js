@@ -17,22 +17,12 @@ const AppUnstyled = ({ className }) => {
         <HeaderText>Full Stack Developer</HeaderText>
       </Header>
       <Timeline>
-        <Event date={new Date('2019-10-15')} isLeft></Event>
-        <Event date={new Date('2019-09-16')}></Event>
-        <Event date={new Date('2019-09-05')}></Event>
-        <Event date={new Date('2019-04-12')} isLeft></Event>
-        <Event date={new Date('2019-10-15')} isLeft></Event>
-        <Event date={new Date('2019-09-16')}></Event>
-        <Event date={new Date('2019-09-05')}></Event>
-        <Event date={new Date('2019-04-12')} isLeft></Event>
-        <Event date={new Date('2019-10-15')} isLeft></Event>
-        <Event date={new Date('2019-09-16')}></Event>
-        <Event date={new Date('2019-09-05')}></Event>
-        <Event date={new Date('2019-04-12')} isLeft></Event>
-        <Event date={new Date('2019-10-15')} isLeft></Event>
-        <Event date={new Date('2019-09-16')}></Event>
-        <Event date={new Date('2019-09-05')}></Event>
-        <Event date={new Date('2019-04-12')} isLeft></Event>
+        <Event date={new Date('2019-10-15')} type="work" isLeft></Event>
+        <Event date={new Date('2019-09-16')} type="music"></Event>
+        <Event date={new Date('2019-09-05')} type="education"></Event>
+        <Event date={new Date('2019-04-12')} type="work" isLeft></Event>
+        <Event date={new Date('2019-10-15')} type="work" isLeft></Event>
+        <Event date={new Date('2019-09-16')} type="music"></Event>
       </Timeline>
     </div>
   );

@@ -15,7 +15,7 @@ const isElementEvent = reactElement => {
   return reactElement.type.displayName === 'Styled(EventUnstyled)';
 };
 
-const isEventLeftEvent = timelineEvent => Boolean(timelineEvent.props.isLeft);
+const getProp = (element, prop) => element.props[prop];
 
 const compareDates = (date1, date2) => {
   if (date1 < date2) {
@@ -34,7 +34,11 @@ const TimelineUnstyled = ({ className, children }) => {
   events.sort(compareDates);
 
   let eventWrappers = events.map((eventElement, index) => (
-    <EventWrapper key={index} isLeft={isEventLeftEvent(eventElement)}>
+    <EventWrapper
+      key={index}
+      isLeft={getProp(eventElement, 'isLeft')}
+      type={getProp(eventElement, 'type')}
+    >
       {eventElement}
     </EventWrapper>
   ));
