@@ -19,6 +19,18 @@ const AppUnstyled = ({ className }) => {
         <Event date={new Date('2019-09-16')}></Event>
         <Event date={new Date('2019-09-05')}></Event>
         <Event date={new Date('2019-04-12')} isLeft></Event>
+        <Event date={new Date('2019-10-15')} isLeft></Event>
+        <Event date={new Date('2019-09-16')}></Event>
+        <Event date={new Date('2019-09-05')}></Event>
+        <Event date={new Date('2019-04-12')} isLeft></Event>
+        <Event date={new Date('2019-10-15')} isLeft></Event>
+        <Event date={new Date('2019-09-16')}></Event>
+        <Event date={new Date('2019-09-05')}></Event>
+        <Event date={new Date('2019-04-12')} isLeft></Event>
+        <Event date={new Date('2019-10-15')} isLeft></Event>
+        <Event date={new Date('2019-09-16')}></Event>
+        <Event date={new Date('2019-09-05')}></Event>
+        <Event date={new Date('2019-04-12')} isLeft></Event>
       </Timeline>
     </div>
   );

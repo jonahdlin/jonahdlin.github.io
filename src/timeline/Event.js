@@ -4,12 +4,9 @@ import { flexCenter } from '../constants/mixins';
 import {
   months,
   TIMELINE_EVENT_WIDTH,
-  TIMELINE_EVENT_POINTER_SIDE_LENGTH,
-  TIMELINE_ICON_DIAMETER,
   TIMELINE_ICON_OFFSET_FROM_TOP,
   TIMELINE_EVENT_POINTER_RADIUS,
 } from '../constants/constants';
-import EventPointer from './EventPointer';
 import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
 
 const EventUnstyled = ({ className, date, children, isLeft }) => {
@@ -32,7 +29,7 @@ const Event = styled(EventUnstyled)`
   .event-content {
     position: relative;
     z-index: 10;
-    border: 1px solid black;
+    border: 1px solid ${LIGHT_GREY_2};
     background-color: ${LIGHT_GREY_1};
     width: ${TIMELINE_EVENT_WIDTH}px;
     height: 100px;
@@ -48,9 +45,9 @@ const Event = styled(EventUnstyled)`
       top: ${TIMELINE_ICON_OFFSET_FROM_TOP + 1}px;
       ${props =>
         props.isLeft
-          ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid black;
+          ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_2};
       left: ${TIMELINE_EVENT_WIDTH - 2}px;`
-          : `border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid black;
+          : `border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_2};
       left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS}px;`};
     }
 
@@ -66,21 +63,12 @@ const Event = styled(EventUnstyled)`
         props.isLeft
           ? `border-left: ${TIMELINE_EVENT_POINTER_RADIUS -
               1}px solid ${LIGHT_GREY_1};
-      left: ${TIMELINE_EVENT_WIDTH - 2}px;`
+      left: ${TIMELINE_EVENT_WIDTH - 2.3}px;`
           : `border-right: ${TIMELINE_EVENT_POINTER_RADIUS -
               1}px solid ${LIGHT_GREY_1};
-      left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS + 2}px;`};
+      left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS + 2.3}px;`};
     }
   }
 `;
-/*
-      top: ${TIMELINE_ICON_OFFSET_FROM_TOP +
-        TIMELINE_ICON_DIAMETER / 2 -
-        TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;
-      ${props =>
-        props.isLeft
-          ? `left: ${TIMELINE_EVENT_WIDTH -
-              TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`
-          : `left: ${-TIMELINE_EVENT_POINTER_SIDE_LENGTH / 2}px;`};
-          */
+
 export default Event;
