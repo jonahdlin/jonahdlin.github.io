@@ -1,6 +1,6 @@
 import { PRIMARY, LIGHT_GREY_1, PRIMARY_3, PRIMARY_2 } from './theme';
 
-export const months = {
+export const monthsMap = {
   0: 'January',
   1: 'February',
   2: 'March',
@@ -33,6 +33,8 @@ export const eventTypeMap = {
   },
 };
 
+export const EVENT_DESCRIPTION_BULLET = '•';
+
 export const HEADER_PHOTO_WIDTH = 150;
 export const HEADER_PHOTO_BORDER_THICKNESS = 3;
 
@@ -40,7 +42,7 @@ export const TIMELINE_LINE_THICKNESS = HEADER_PHOTO_BORDER_THICKNESS;
 export const TIMELINE_ICON_DIAMETER = 35;
 export const TIMELINE_ICON_OFFSET_FROM_TOP = 10;
 
-export const TIMELINE_EVENT_WIDTH = 300;
+export const TIMELINE_EVENT_WIDTH = 450;
 export const TIMELINE_EVENT_POINTER_RADIUS = 15;
 export const TIMELINE_EVENT_POINTER_SIDE_LENGTH = Math.sqrt(
   Math.pow(TIMELINE_EVENT_POINTER_RADIUS, 2) / 2
