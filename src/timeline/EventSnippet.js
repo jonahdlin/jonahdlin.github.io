@@ -7,48 +7,21 @@ import {
   TIMELINE_EVENT_POINTER_RADIUS,
   TIMELINE_ICON_DIAMETER,
   monthsMap,
-  EVENT_DESCRIPTION_BULLET,
 } from '../constants/constants';
 import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
 
-const EventUnstyled = ({
-  className,
-  date,
-  icon,
-  title,
-  subtitle,
-  points,
-  isLeft,
-}) => {
+const EventSnippetUnstyled = ({ className, date, title, isLeft }) => {
   const month = monthsMap[date.getMonth()];
   const year = date.getFullYear();
 
-  let eventDescriptions;
-  if (points && points.length) {
-    const descriptions = points.map((point, index) => (
-      <div className="event-description" key={index}>
-        {`${EVENT_DESCRIPTION_BULLET}  ${point}`}
-      </div>
-    ));
-    eventDescriptions = (
-      <div className="event-descriptions">{descriptions}</div>
-    );
-  }
-
   return (
     <div className={className}>
-      <div className="event-content">
-        <div className="event-header">
-          <div className="event-icon-container">
-            <img className="event-icon" src={icon} alt="" />
-          </div>
-          <div className="event-titles-container">
-            <div className="event-title">{title}</div>
-            <div className="event-subtitle">{subtitle}</div>
-          </div>
-          <div className="event-date" date={date}>{`${month} ${year}`}</div>
-        </div>
-        {eventDescriptions}
+      <div className="event-snippet-content">
+        <div className="event-snippet-title">{title}</div>
+        <div
+          className="event-snippet-date"
+          date={date}
+        >{`${month} ${year}`}</div>
       </div>
     </div>
   );
@@ -83,61 +56,31 @@ left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS + 2.3}px;`;
   }
 };
 
-const Event = styled(EventUnstyled)`
+const EventSnippet = styled(EventSnippetUnstyled)`
   position: relative;
   ${flexCenter};
   ${props => (props.isLeft ? 'margin-right: auto' : 'margin-left: auto')};
   box-shadow: ${BOX_SHADOW};
 
-  .event-content {
+  .event-snippet-content {
     position: relative;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid ${LIGHT_GREY_2};
     background-color: ${LIGHT_GREY_1};
     width: ${TIMELINE_EVENT_WIDTH}px;
     padding: 15px;
 
-    .event-header {
-      ${flexCenter};
-      width: 100%;
-
-      .event-icon-container {
-        ${flexCenter};
-        height: 75px;
-        width: 75px;
-
-        .event-icon {
-          height: 100%;
-          max-width: 100%;
-        }
-      }
-
-      .event-titles-container {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: center;
-
-        .event-title {
-          font-size: 24px;
-        }
-      }
-
-      .event-date {
-        height: 100%;
-      }
+    .event-snippet-title {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
     }
 
-    .event-descriptions {
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      .event-description {
-        :not(:last-child) {
-          margin-bottom: 5px;
-        }
-      }
+    .event-snippet-date {
+      height: 100%;
     }
 
     &::before {
@@ -164,4 +107,4 @@ const Event = styled(EventUnstyled)`
   }
 `;
 
-export default Event;
+export default EventSnippet;

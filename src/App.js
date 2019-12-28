@@ -6,6 +6,7 @@ import Header from './header/Header';
 import HeaderText from './header/HeaderText';
 import Timeline from './timeline/Timeline';
 import Event from './timeline/Event';
+import EventSnippet from './timeline/EventSnippet';
 import Navigation from './navigation/Navigation';
 
 import genesysLogo from './assets/genesysLogo.png';
@@ -33,11 +34,11 @@ const AppUnstyled = ({ className }) => {
             'Ate too much at Brazilian steakhouses',
           ]}
         />
-        <Event
+        <EventSnippet
           date={new Date('2019-09-16')}
           type="music"
           icon={genesysLogo}
-          subtitle="Bought my first guitar"
+          title="Bought my first guitar"
         />
         <Event date={new Date('2019-09-05')} type="education" />
         <Event date={new Date('2019-04-12')} type="work" isLeft />

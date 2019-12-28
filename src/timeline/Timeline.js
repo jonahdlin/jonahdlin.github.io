@@ -12,7 +12,10 @@ import {
 } from '../constants/constants';
 
 const isElementEvent = reactElement => {
-  return reactElement.type.displayName === 'Styled(EventUnstyled)';
+  return (
+    reactElement.type.displayName === 'Styled(EventUnstyled)' ||
+    reactElement.type.displayName === 'Styled(EventSnippetUnstyled)'
+  );
 };
 
 const getProp = (element, prop) => element.props[prop];
