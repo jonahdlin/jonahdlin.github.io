@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { HEADER_PHOTO_WIDTH } from '../constants/constants';
+import { HEADER_FONT } from '../constants/theme';
 
 const HeaderTextUnstyled = ({ className, children, isRightAligned }) => {
   return <div className={className}>{children}</div>;
@@ -20,6 +21,8 @@ const HeaderText = styled(HeaderTextUnstyled)`
       left: calc(50% + ${HEADER_PHOTO_WIDTH / 2}px);`};
   padding-left: 20px;
   padding-right: 20px;
+  font-family: ${HEADER_FONT};
+  font-size: 40px;
 `;
 
 export default HeaderText;

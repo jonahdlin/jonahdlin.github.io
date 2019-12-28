@@ -8,7 +8,13 @@ import {
   TIMELINE_ICON_DIAMETER,
   monthsMap,
 } from '../constants/constants';
-import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
+import {
+  BOX_SHADOW,
+  LIGHT_GREY_1,
+  LIGHT_GREY_2,
+  HEADER_FONT,
+  PARAGRAPH_FONT,
+} from '../constants/theme';
 
 const EventSnippetUnstyled = ({ className, date, title, isLeft }) => {
   const month = monthsMap[date.getMonth()];
@@ -76,11 +82,14 @@ const EventSnippet = styled(EventSnippetUnstyled)`
       height: 100%;
       display: flex;
       justify-content: center;
-      font-size: 20px;
+      font-family: ${HEADER_FONT};
+      font-size: 18px;
     }
 
     .event-snippet-date {
       height: 100%;
+      font-family: ${PARAGRAPH_FONT};
+      font-size: 12px;
     }
 
     &::before {

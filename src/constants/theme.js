@@ -16,3 +16,6 @@ export const HEADER_PHOTO_BORDER_COLOUR = DARK_GREY;
 export const TIMELINE_LINE_COLOUR = DARK_GREY;
 
 export const BOX_SHADOW = '0px 0px 14px 0px rgba(228,228,228,1)';
+
+export const HEADER_FONT = "'Nunito', 'Open Sans', sans-serif";
+export const PARAGRAPH_FONT = "'Open Sans', sans-serif";

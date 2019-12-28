@@ -9,7 +9,13 @@ import {
   monthsMap,
   EVENT_DESCRIPTION_BULLET,
 } from '../constants/constants';
-import { BOX_SHADOW, LIGHT_GREY_1, LIGHT_GREY_2 } from '../constants/theme';
+import {
+  BOX_SHADOW,
+  LIGHT_GREY_1,
+  LIGHT_GREY_2,
+  HEADER_FONT,
+  PARAGRAPH_FONT,
+} from '../constants/theme';
 
 const EventUnstyled = ({
   className,
@@ -122,11 +128,18 @@ const Event = styled(EventUnstyled)`
 
         .event-title {
           font-size: 24px;
+          font-family: ${HEADER_FONT};
+        }
+
+        .event-subtitle {
+          font-family: ${PARAGRAPH_FONT};
         }
       }
 
       .event-date {
         height: 100%;
+        font-family: ${PARAGRAPH_FONT};
+        font-size: 12px;
       }
     }
 
@@ -134,7 +147,10 @@ const Event = styled(EventUnstyled)`
       margin-top: 12px;
       display: flex;
       flex-direction: column;
+
       .event-description {
+        font-family: ${PARAGRAPH_FONT};
+        font-size: 14px;
         :not(:last-child) {
           margin-bottom: 5px;
         }

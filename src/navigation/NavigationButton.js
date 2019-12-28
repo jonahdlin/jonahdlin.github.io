@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { flexCenter } from '../constants/mixins';
-import { PRIMARY, LIGHT_GREY_1, BOX_SHADOW } from '../constants/theme';
+import {
+  PRIMARY,
+  LIGHT_GREY_1,
+  BOX_SHADOW,
+  PARAGRAPH_FONT,
+} from '../constants/theme';
 
 const NavigationButtonUnstyled = ({ className, text }) => {
   return <div className={className}>{text}</div>;
@@ -17,6 +22,8 @@ const NavigationButton = styled(NavigationButtonUnstyled)`
   box-shadow: ${BOX_SHADOW};
   user-select: none;
   cursor: pointer;
+  font-family: ${PARAGRAPH_FONT};
+  font-size: 13px;
 
   :not(:last-child) {
     margin-bottom: 10px;
