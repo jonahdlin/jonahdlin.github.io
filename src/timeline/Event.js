@@ -105,9 +105,10 @@ const Event = styled(EventUnstyled)`
         ${flexCenter};
         height: 75px;
         width: 75px;
+        margin-right: 10px;
 
         .event-icon {
-          height: 100%;
+          max-height: 100%;
           max-width: 100%;
         }
       }
