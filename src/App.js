@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Navigation from './navigation/Navigation';
 import HeaderPhoto from './header/HeaderPhoto';
 import Header from './header/Header';
 import HeaderText from './header/HeaderText';
 import Timeline from './timeline/Timeline';
 import Event from './timeline/Event';
 import EventSnippet from './timeline/EventSnippet';
-import Navigation from './navigation/Navigation';
+import Projects from './projects/Projects';
+import ProjectCard from './projects/ProjectCard';
 
 import genesysLogo from './assets/genesysLogo.png';
 import wishLogo from './assets/wishLogo.png';
@@ -101,6 +103,11 @@ const AppUnstyled = ({ className }) => {
           title="Accepted to UW with President's Scholarship of Distinction"
         />
       </Timeline>
+      <Projects header="Featured Projects">
+        <ProjectCard></ProjectCard>
+        <ProjectCard></ProjectCard>
+        <ProjectCard></ProjectCard>
+      </Projects>
     </div>
   );
 };
