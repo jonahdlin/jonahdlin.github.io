@@ -15,6 +15,7 @@ import {
   LIGHT_GREY_4,
   HEADER_FONT,
   PARAGRAPH_FONT,
+  DARK_GREY_2,
 } from '../constants/theme';
 
 const EventUnstyled = ({
@@ -140,6 +141,7 @@ const Event = styled(EventUnstyled)`
         height: 100%;
         font-family: ${PARAGRAPH_FONT};
         font-size: 12px;
+        color: ${DARK_GREY_2};
       }
     }
 

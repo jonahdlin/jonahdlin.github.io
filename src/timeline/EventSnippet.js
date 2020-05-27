@@ -14,6 +14,7 @@ import {
   LIGHT_GREY_4,
   HEADER_FONT,
   PARAGRAPH_FONT,
+  DARK_GREY_2,
 } from '../constants/theme';
 
 const EventSnippetUnstyled = ({ className, date, title, isLeft }) => {
@@ -87,9 +88,12 @@ const EventSnippet = styled(EventSnippetUnstyled)`
     }
 
     .event-snippet-date {
-      height: 100%;
+      ${flexCenter};
       font-family: ${PARAGRAPH_FONT};
       font-size: 12px;
+      width: 150px;
+      text-align: right;
+      color: ${DARK_GREY_2};
     }
 
     &::before {
