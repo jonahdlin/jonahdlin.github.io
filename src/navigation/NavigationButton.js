@@ -8,8 +8,12 @@ import {
   PARAGRAPH_FONT,
 } from '../constants/theme';
 
-const NavigationButtonUnstyled = ({ className, text }) => {
-  return <div className={className}>{text}</div>;
+const NavigationButtonUnstyled = ({ className, text, clickHandler }) => {
+  return (
+    <div className={className} onClick={clickHandler}>
+      {text}
+    </div>
+  );
 };
 
 const NavigationButton = styled(NavigationButtonUnstyled)`

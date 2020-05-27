@@ -7,11 +7,13 @@ import {
 } from '../constants/constants';
 import { HEADER_PHOTO_BORDER_COLOUR } from '../constants/theme';
 
+import headshot from '../assets/headshot.jpg';
+
 const HeaderPhotoUnstyled = ({ className }) => {
   return (
     <div className={className}>
       <div className="photo-container">
-        <img src="../../public/favicon.ico" alt="IMG" />
+        <img className="photo" src={headshot} alt="IMG" />
       </div>
     </div>
   );
@@ -29,6 +31,12 @@ const HeaderPhoto = styled(HeaderPhotoUnstyled)`
     border-radius: 100%;
     border: ${HEADER_PHOTO_BORDER_THICKNESS}px solid
       ${HEADER_PHOTO_BORDER_COLOUR};
+    overflow: hidden;
+
+    .photo {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 

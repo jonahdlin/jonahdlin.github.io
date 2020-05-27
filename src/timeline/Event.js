@@ -12,7 +12,7 @@ import {
 import {
   BOX_SHADOW,
   LIGHT_GREY_1,
-  LIGHT_GREY_2,
+  LIGHT_GREY_4,
   HEADER_FONT,
   PARAGRAPH_FONT,
 } from '../constants/theme';
@@ -68,11 +68,11 @@ const EVENT_POINTER_OFFSET_FROM_TOP =
 const eventPointerBeforeStyling = props => {
   if (props.isLeft) {
     return `\
-border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_2};
+border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
 left: ${TIMELINE_EVENT_WIDTH - 2}px;`;
   } else {
     return `\
-border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_2};
+border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
 left: ${-2 * TIMELINE_EVENT_POINTER_RADIUS}px;`;
   }
 };
@@ -98,7 +98,7 @@ const Event = styled(EventUnstyled)`
   .event-content {
     position: relative;
     z-index: 10;
-    border: 1px solid ${LIGHT_GREY_2};
+    border: 1px solid ${LIGHT_GREY_4};
     background-color: ${LIGHT_GREY_1};
     width: ${TIMELINE_EVENT_WIDTH}px;
     padding: 15px;
