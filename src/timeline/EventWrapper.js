@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import EventIcon from './EventIcon';
 
-const EventWrapperUnstyled = ({ className, children, type }) => {
+const EventWrapperUnstyled = ({ className, children, type, isDesktop }) => {
   return (
     <div className={className}>
-      <EventIcon type={type} />
+      <EventIcon isDesktop={isDesktop} type={type} />
       {children}
     </div>
   );

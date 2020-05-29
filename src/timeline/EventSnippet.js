@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { flexCenter } from '../constants/mixins';
 import {
   TIMELINE_EVENT_WIDTH,
+  TIMELINE_EVENT_WIDTH_REDUCED,
   TIMELINE_ICON_OFFSET_FROM_TOP,
   TIMELINE_EVENT_POINTER_RADIUS,
   TIMELINE_ICON_DIAMETER,
@@ -43,7 +44,11 @@ const eventPointerBeforeStyling = props => {
   if (props.isLeft) {
     return `\
 border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
-left: ${TIMELINE_EVENT_WIDTH - 2}px;`;
+left: ${
+      props.isDesktop
+        ? TIMELINE_EVENT_WIDTH - 2
+        : TIMELINE_EVENT_WIDTH_REDUCED - 2
+    }px;`;
   } else {
     return `\
 border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
@@ -55,7 +60,11 @@ const eventPointerAfterStyling = props => {
   if (props.isLeft) {
     return `\
 border-left: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid ${LIGHT_GREY_1};
-left: ${TIMELINE_EVENT_WIDTH - 2.3}px;`;
+left: ${
+      props.isDesktop
+        ? TIMELINE_EVENT_WIDTH - 2.3
+        : TIMELINE_EVENT_WIDTH_REDUCED - 2.3
+    }px;`;
   } else {
     return `\
 border-right: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid ${LIGHT_GREY_1};
@@ -76,7 +85,8 @@ const EventSnippet = styled(EventSnippetUnstyled)`
     justify-content: space-between;
     border: 1px solid ${LIGHT_GREY_4};
     background-color: ${LIGHT_GREY_1};
-    width: ${TIMELINE_EVENT_WIDTH}px;
+    width: ${props =>
+      props.isDesktop ? TIMELINE_EVENT_WIDTH : TIMELINE_EVENT_WIDTH_REDUCED}px;
     padding: 15px;
 
     .event-snippet-title {
@@ -84,14 +94,18 @@ const EventSnippet = styled(EventSnippetUnstyled)`
       display: flex;
       justify-content: center;
       font-family: ${HEADER_FONT};
-      font-size: 18px;
+      font-size: ${props => (props.isDesktop ? 18 : 14)}px;
     }
 
     .event-snippet-date {
-      ${flexCenter};
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       font-family: ${PARAGRAPH_FONT};
-      font-size: 12px;
-      width: 150px;
+      font-size: ${props => (props.isDesktop ? 12 : 10)}px;
+      flex-grow: 1;
+      margin-left: 10px;
+      white-space: nowrap;
       text-align: right;
       color: ${DARK_GREY_2};
     }

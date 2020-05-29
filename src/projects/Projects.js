@@ -8,7 +8,7 @@ import graphHaxThumb from '../assets/graphHaxThumb.png';
 import evolutionThumb from '../assets/evolutionThumb.png';
 import tavimThumb from '../assets/tavimThumb.png';
 
-const ProjectsUnstyled = ({ className }) => {
+const ProjectsUnstyled = ({ className, isDesktop }) => {
   const graphHaxDesc = (
     <div>
       Nodes and paths network visualizer built with{' '}
@@ -91,6 +91,7 @@ const ProjectsUnstyled = ({ className }) => {
           year="2017"
           description={graphHaxDesc}
           technologies="Canvas, JS, jQuery"
+          isDesktop={isDesktop}
         />
         <ProjectCard
           thumbnail={evolutionThumb}
@@ -98,6 +99,7 @@ const ProjectsUnstyled = ({ className }) => {
           year="2019-ongoing"
           description="Evolution simulator where creatures with randomized traits compete for food to stay alive."
           technologies="Canvas, React"
+          isDesktop={isDesktop}
         />
         <ProjectCard
           thumbnail={tavimThumb}
@@ -107,6 +109,7 @@ const ProjectsUnstyled = ({ className }) => {
           technologies="React, Redux, TypeScript"
           hasNoLink={true}
           secondaryDescription={tavimSecondaryDesc}
+          isDesktop={isDesktop}
         />
       </div>
     </div>
@@ -114,21 +117,19 @@ const ProjectsUnstyled = ({ className }) => {
 };
 
 const Projects = styled(ProjectsUnstyled)`
-  height: 100%;
-  width: calc(100% - 250px);
-  margin-left: 125px;
-  margin-right: 125px;
-
   .projects-header {
     ${flexCenter};
     height: 100px;
     font-family: ${HEADER_FONT};
-    font-size: 40px;
+    font-size: ${props => (props.isDesktop ? 40 : 30)}px;
     margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .projects-cards-container {
     ${flexCenter};
+    ${props => !props.isDesktop && 'flex-direction: column;'};
   }
 `;
 

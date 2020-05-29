@@ -8,7 +8,7 @@ import {
 import { flexCenter } from '../constants/mixins';
 import { PRIMARY, LIGHT_GREY_1 } from '../constants/theme';
 
-const EventIconUnstyled = ({ className, type }) => {
+const EventIconUnstyled = ({ className, type, isDesktop }) => {
   const iconName = eventTypeMap[type] ? eventTypeMap[type].iconName : undefined;
   return (
     <div className={className}>
@@ -38,6 +38,7 @@ const EventIcon = styled(EventIconUnstyled)`
   height: ${TIMELINE_ICON_DIAMETER}px;
   border-radius: 50%;
   background-color: ${getBackgroundColour};
+  ${props => !props.isDesktop && `left: ${-TIMELINE_ICON_DIAMETER / 2}px;`}
 
   .material-icons {
     color: ${getColour};

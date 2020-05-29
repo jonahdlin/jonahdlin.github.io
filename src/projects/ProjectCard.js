@@ -24,6 +24,7 @@ const ProjectCardUnstyled = ({
   link,
   hasNoLink,
   secondaryDescription,
+  isDesktop,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleProjectClick = event => {
@@ -83,7 +84,8 @@ const ProjectCard = styled(ProjectCardUnstyled)`
   perspective: 1000px;
 
   :not(:last-child) {
-    margin-right: 30px;
+    ${props => props.isDesktop && 'margin-right: 30px;'}
+    ${props => !props.isDesktop && 'margin-bottom: 30px;'}
   }
 
   .project-flip-container {

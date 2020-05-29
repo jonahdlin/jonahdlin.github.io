@@ -1,26 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Navigation from './navigation/Navigation';
-import HeaderPhoto from './header/HeaderPhoto';
 import Header from './header/Header';
-import HeaderText from './header/HeaderText';
 import Timeline from './timeline/Timeline';
 import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 
 const AppUnstyled = ({ className }) => {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const handleDimensionChange = () => {
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleDimensionChange);
+    return () => window.removeEventListener('resize', handleDimensionChange);
+  });
+
+  const noNavCutoff = 1250;
+  const twoColumnCutoff = 1050;
+
+  const isNav = windowDimensions.width >= noNavCutoff;
+  const isDesktop = windowDimensions.width >= twoColumnCutoff;
+
+  const nav = isNav ? <Navigation /> : null;
+
   return (
     <div className={className}>
-      <Navigation />
-      <Header>
-        <HeaderText isRightAligned>Jonah Dlin</HeaderText>
-        <HeaderPhoto />
-        <HeaderText>Full Stack Developer</HeaderText>
-      </Header>
-      <Timeline />
-      <Projects />
-      <Contact></Contact>
+      {nav}
+      <Header isDesktop={isDesktop} />
+      <Timeline isDesktop={isDesktop} />
+      <Projects isDesktop={isDesktop} />
+      <Contact isDesktop={isDesktop} />
     </div>
   );
 };

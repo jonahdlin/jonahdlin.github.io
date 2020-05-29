@@ -4,12 +4,13 @@ import { flexCenter } from '../constants/mixins';
 import {
   HEADER_PHOTO_WIDTH,
   HEADER_PHOTO_BORDER_THICKNESS,
+  HEADER_PHOTO_WIDTH_REDUCED,
 } from '../constants/constants';
 import { HEADER_PHOTO_BORDER_COLOUR } from '../constants/theme';
 
 import headshot from '../assets/headshot.jpg';
 
-const HeaderPhotoUnstyled = ({ className }) => {
+const HeaderPhotoUnstyled = ({ className, isDesktop }) => {
   return (
     <div className={className}>
       <div className="photo-container">
@@ -21,8 +22,10 @@ const HeaderPhotoUnstyled = ({ className }) => {
 
 const HeaderPhoto = styled(HeaderPhotoUnstyled)`
   position: absolute;
-  width: ${HEADER_PHOTO_WIDTH}px;
-  height: ${HEADER_PHOTO_WIDTH}px;
+  width: ${props =>
+    props.isDesktop ? HEADER_PHOTO_WIDTH : HEADER_PHOTO_WIDTH_REDUCED}px;
+  height: ${props =>
+    props.isDesktop ? HEADER_PHOTO_WIDTH : HEADER_PHOTO_WIDTH_REDUCED}px;
 
   .photo-container {
     ${flexCenter}

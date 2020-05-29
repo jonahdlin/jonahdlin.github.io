@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { flexCenter } from '../constants/mixins';
 import {
   TIMELINE_EVENT_WIDTH,
+  TIMELINE_EVENT_WIDTH_REDUCED,
   TIMELINE_ICON_OFFSET_FROM_TOP,
   TIMELINE_EVENT_POINTER_RADIUS,
   TIMELINE_ICON_DIAMETER,
@@ -26,6 +27,7 @@ const EventUnstyled = ({
   subtitle,
   points,
   isLeft,
+  isDesktop,
 }) => {
   const month = monthsMap[date.getMonth()];
   const year = date.getFullYear();
@@ -70,7 +72,11 @@ const eventPointerBeforeStyling = props => {
   if (props.isLeft) {
     return `\
 border-left: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
-left: ${TIMELINE_EVENT_WIDTH - 2}px;`;
+left: ${
+      props.isDesktop
+        ? TIMELINE_EVENT_WIDTH - 2
+        : TIMELINE_EVENT_WIDTH_REDUCED - 2
+    }px;`;
   } else {
     return `\
 border-right: ${TIMELINE_EVENT_POINTER_RADIUS}px solid ${LIGHT_GREY_4};
@@ -82,7 +88,11 @@ const eventPointerAfterStyling = props => {
   if (props.isLeft) {
     return `\
 border-left: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid ${LIGHT_GREY_1};
-left: ${TIMELINE_EVENT_WIDTH - 2.3}px;`;
+left: ${
+      props.isDesktop
+        ? TIMELINE_EVENT_WIDTH - 2.3
+        : TIMELINE_EVENT_WIDTH_REDUCED - 2.3
+    }px;`;
   } else {
     return `\
 border-right: ${TIMELINE_EVENT_POINTER_RADIUS - 1}px solid ${LIGHT_GREY_1};
@@ -101,7 +111,8 @@ const Event = styled(EventUnstyled)`
     z-index: 10;
     border: 1px solid ${LIGHT_GREY_4};
     background-color: ${LIGHT_GREY_1};
-    width: ${TIMELINE_EVENT_WIDTH}px;
+    width: ${props =>
+      props.isDesktop ? TIMELINE_EVENT_WIDTH : TIMELINE_EVENT_WIDTH_REDUCED}px;
     padding: 15px;
 
     .event-header {
@@ -110,8 +121,8 @@ const Event = styled(EventUnstyled)`
 
       .event-icon-container {
         ${flexCenter};
-        height: 75px;
-        width: 75px;
+        height: ${props => (props.isDesktop ? 75 : 40)}px;
+        width: ${props => (props.isDesktop ? 75 : 40)}px;
         margin-right: 10px;
 
         .event-icon {
@@ -128,20 +139,22 @@ const Event = styled(EventUnstyled)`
         justify-content: center;
 
         .event-title {
-          font-size: 24px;
+          font-size: ${props => (props.isDesktop ? 24 : 18)}px;
           font-family: ${HEADER_FONT};
         }
 
         .event-subtitle {
           font-family: ${PARAGRAPH_FONT};
+          font-size: ${props => (props.isDesktop ? 18 : 12)}px;
         }
       }
 
       .event-date {
         height: 100%;
         font-family: ${PARAGRAPH_FONT};
-        font-size: 12px;
+        font-size: ${props => (props.isDesktop ? 12 : 10)}px;
         color: ${DARK_GREY_2};
+        text-align: right;
       }
     }
 
@@ -152,7 +165,7 @@ const Event = styled(EventUnstyled)`
 
       .event-description {
         font-family: ${PARAGRAPH_FONT};
-        font-size: 14px;
+        font-size: ${props => (props.isDesktop ? 14 : 12)}px;
         :not(:last-child) {
           margin-bottom: 5px;
         }

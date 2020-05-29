@@ -13,60 +13,119 @@ import linkedinSvg from '../assets/linkedin.svg';
 import githubSvg from '../assets/github.svg';
 import resume from '../assets/resume.pdf';
 
-const ContactUnstyled = ({ className }) => (
-  <div className={className}>
-    <div className="contact-header">Contact</div>
-    <div className="contact-methods-container">
-      <div className="contact-method-wrapper">
-        <a
-          className="contact-link"
-          href={resume}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="contact-method-icon-container">
-            <i className="material-icons">description</i>
-          </div>
-        </a>
-        <div className="contact-method-subtitle">Resume</div>
-      </div>
-      <div className="contact-method-wrapper">
-        <a
-          className="contact-link"
-          href="https://github.com/jonahdlin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="contact-method-icon-container">
-            <img className="github-icon" src={githubSvg} alt="IN" />
-          </div>
-        </a>
-        <div className="contact-method-subtitle">GitHub</div>
-      </div>
-      <div className="contact-method-wrapper">
-        <a
-          className="contact-link"
-          href="https://www.linkedin.com/in/jonah-dlin-00b281106/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="contact-method-icon-container">
-            <img className="linkedin-icon" src={linkedinSvg} alt="IN" />
-          </div>
-        </a>
-        <div className="contact-method-subtitle">LinkedIn</div>
-      </div>
-      <div className="contact-method-wrapper">
-        <a className="contact-link" href="mailto: jonah.dlin@gmail.com">
-          <div className="contact-method-icon-container">
-            <i className="material-icons">mail_outline</i>
-          </div>
-        </a>
-        <div className="contact-method-subtitle">Email</div>
+const ContactUnstyled = ({ className, isDesktop }) => {
+  return isDesktop ? (
+    <div className={className}>
+      <div className="contact-header">Contact</div>
+      <div className="contact-methods-container">
+        <div className="contact-method-wrapper">
+          <a
+            className="contact-link"
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="contact-method-icon-container">
+              <i className="material-icons">description</i>
+            </div>
+          </a>
+          <div className="contact-method-subtitle">Resume</div>
+        </div>
+        <div className="contact-method-wrapper">
+          <a
+            className="contact-link"
+            href="https://github.com/jonahdlin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="contact-method-icon-container">
+              <img className="github-icon" src={githubSvg} alt="IN" />
+            </div>
+          </a>
+          <div className="contact-method-subtitle">GitHub</div>
+        </div>
+        <div className="contact-method-wrapper">
+          <a
+            className="contact-link"
+            href="https://www.linkedin.com/in/jonah-dlin-00b281106/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="contact-method-icon-container">
+              <img className="linkedin-icon" src={linkedinSvg} alt="IN" />
+            </div>
+          </a>
+          <div className="contact-method-subtitle">LinkedIn</div>
+        </div>
+        <div className="contact-method-wrapper">
+          <a className="contact-link" href="mailto: jonah.dlin@gmail.com">
+            <div className="contact-method-icon-container">
+              <i className="material-icons">mail_outline</i>
+            </div>
+          </a>
+          <div className="contact-method-subtitle">Email</div>
+        </div>
       </div>
     </div>
-  </div>
-);
+  ) : (
+    <div className={className}>
+      <div className="contact-header">Contact</div>
+      <div className="contact-methods-container">
+        <div className="contact-method-row">
+          <div className="contact-method-wrapper">
+            <a
+              className="contact-link"
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-method-icon-container">
+                <i className="material-icons">description</i>
+              </div>
+            </a>
+            <div className="contact-method-subtitle">Resume</div>
+          </div>
+          <div className="contact-method-wrapper">
+            <a
+              className="contact-link"
+              href="https://github.com/jonahdlin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-method-icon-container">
+                <img className="github-icon" src={githubSvg} alt="IN" />
+              </div>
+            </a>
+            <div className="contact-method-subtitle">GitHub</div>
+          </div>
+        </div>
+        <div className="contact-method-row">
+          <div className="contact-method-wrapper">
+            <a
+              className="contact-link"
+              href="https://www.linkedin.com/in/jonah-dlin-00b281106/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-method-icon-container">
+                <img className="linkedin-icon" src={linkedinSvg} alt="IN" />
+              </div>
+            </a>
+            <div className="contact-method-subtitle">LinkedIn</div>
+          </div>
+          <div className="contact-method-wrapper">
+            <a className="contact-link" href="mailto: jonah.dlin@gmail.com">
+              <div className="contact-method-icon-container">
+                <i className="material-icons">mail_outline</i>
+              </div>
+            </a>
+            <div className="contact-method-subtitle">Email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Contact = styled(ContactUnstyled)`
   margin-bottom: 50px;
@@ -75,12 +134,20 @@ const Contact = styled(ContactUnstyled)`
     ${flexCenter};
     height: 100px;
     font-family: ${HEADER_FONT};
-    font-size: 40px;
+    font-size: ${props => (props.isDesktop ? 40 : 30)}px;
     margin-top: 40px;
   }
 
   .contact-methods-container {
     ${flexCenter};
+
+    ${props => !props.isDesktop && 'flex-direction: column'};
+    .contact-method-row {
+      ${flexCenter};
+      :not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
 
     .contact-method-wrapper {
       display: flex;

@@ -7,6 +7,7 @@ import EventWrapper from './EventWrapper';
 import {
   TIMELINE_ICON_DIAMETER,
   TIMELINE_EVENT_WIDTH,
+  TIMELINE_EVENT_WIDTH_REDUCED,
   TIMELINE_EVENT_POINTER_RADIUS,
   TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON,
 } from '../constants/constants';
@@ -29,18 +30,21 @@ const compareDates = (date1, date2) => {
   return 0;
 };
 
-const TimelineUnstyled = ({ className }) => {
+const TimelineUnstyled = ({ className, isDesktop }) => {
   // Add new events here (don't need to be sorted)
+  // Any events with "isLeft" true should depend on isDesktop
+  // I could do this automatically but I'm lazy.
   let events = [
     <EventSnippet
       date={new Date('2019-12-06')}
       type="education"
       title="Scholarship for academic achievement from UW (again!)"
+      isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2019-09-02')}
       type="work"
-      isLeft
+      isLeft={isDesktop}
       icon={genesysLogo}
       title="Genesys"
       subtitle="Backend Developer"
@@ -49,16 +53,18 @@ const TimelineUnstyled = ({ className }) => {
         'Learned a ton independently',
         'Ate too much at Brazilian steakhouses',
       ]}
+      isDesktop={isDesktop}
     />,
     <EventSnippet
       date={new Date('2019-09-16')}
       type="music"
       title="Bought my first guitar"
+      isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2019-01-02')}
       type="work"
-      isLeft
+      isLeft={isDesktop}
       icon={wishLogo}
       title="Wish"
       subtitle="Full Stack Developer"
@@ -67,16 +73,18 @@ const TimelineUnstyled = ({ className }) => {
         'Explored the SF Bay Area and Yosemite',
         'Embarked on a fun-filled trip to Boise, Idaho',
       ]}
+      isDesktop={isDesktop}
     />,
     <EventSnippet
       date={new Date('2018-11-23')}
       type="education"
       title="Scholarship for academic achievement from UW"
+      isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2018-05-02')}
       type="work"
-      isLeft
+      isLeft={isDesktop}
       icon={genesysLogo}
       title="Genesys"
       subtitle="Frontend Developer"
@@ -85,11 +93,12 @@ const TimelineUnstyled = ({ className }) => {
         'Interacted with a sprawling international team',
         'Got amazing at foosball',
       ]}
+      isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2018-05-02')}
       type="work"
-      isLeft
+      isLeft={isDesktop}
       icon={uoftLogo}
       title="Univerity of Toronto"
       subtitle="Full Stack Developer"
@@ -98,16 +107,19 @@ const TimelineUnstyled = ({ className }) => {
         'Build a whole web app from scratch',
         'Became a published medical author',
       ]}
+      isDesktop={isDesktop}
     />,
     <EventSnippet
       date={new Date('2017-01-31')}
       type="music"
       title="Bought my first bass guitar"
+      isDesktop={isDesktop}
     />,
     <EventSnippet
       date={new Date('2015-05-07')}
       type="education"
       title="Accepted to UW with President's Scholarship of Distinction"
+      isDesktop={isDesktop}
     />,
   ];
 
@@ -116,8 +128,9 @@ const TimelineUnstyled = ({ className }) => {
   let eventWrappers = events.map((eventElement, index) => (
     <EventWrapper
       key={index}
-      isLeft={getProp(eventElement, 'isLeft')}
+      isLeft={!isDesktop && getProp(eventElement, 'isLeft')}
       type={getProp(eventElement, 'type')}
+      isDesktop={isDesktop}
     >
       {eventElement}
     </EventWrapper>
@@ -126,7 +139,7 @@ const TimelineUnstyled = ({ className }) => {
   return (
     <div className={className}>
       <EventsContainer>{eventWrappers}</EventsContainer>
-      <TimelineLine />
+      <TimelineLine isDesktop={isDesktop} />
     </div>
   );
 };
@@ -134,11 +147,17 @@ const TimelineUnstyled = ({ className }) => {
 const Timeline = styled(TimelineUnstyled)`
   ${flexCenter};
   position: relative;
-  width: ${2 *
-    (TIMELINE_EVENT_WIDTH +
-      TIMELINE_EVENT_POINTER_RADIUS +
-      TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON +
-      TIMELINE_ICON_DIAMETER / 2)}px;
+  width: ${props =>
+    props.isDesktop
+      ? 2 *
+        (TIMELINE_EVENT_WIDTH +
+          TIMELINE_EVENT_POINTER_RADIUS +
+          TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON +
+          TIMELINE_ICON_DIAMETER / 2)
+      : TIMELINE_EVENT_WIDTH_REDUCED +
+        TIMELINE_EVENT_POINTER_RADIUS +
+        TIMELINE_EVENT_POINTER_DISTANCE_FROM_ICON +
+        TIMELINE_ICON_DIAMETER / 2}px;
   padding-top: 20px;
 `;
 
