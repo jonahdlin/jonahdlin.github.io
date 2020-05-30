@@ -36,13 +36,14 @@ const TimelineUnstyled = ({ className, isDesktop }) => {
   // I could do this automatically but I'm lazy.
   let events = [
     <EventSnippet
-      date={new Date('2019-12-06')}
+      date={new Date('2020-04-15')}
       type="education"
-      title="Scholarship for academic achievement from UW (again!)"
+      title="Graduated from UWaterloo with a BMath on the Dean's Honours List"
       isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2019-09-02')}
+      date2={new Date('2019-12-31')}
       type="work"
       isLeft={isDesktop}
       icon={genesysLogo}
@@ -56,13 +57,14 @@ const TimelineUnstyled = ({ className, isDesktop }) => {
       isDesktop={isDesktop}
     />,
     <EventSnippet
-      date={new Date('2019-09-16')}
+      date={new Date('2019-01-02')}
       type="music"
       title="Bought my first guitar"
       isDesktop={isDesktop}
     />,
     <Event
       date={new Date('2019-01-02')}
+      date2={new Date('2019-04-20')}
       type="work"
       isLeft={isDesktop}
       icon={wishLogo}
@@ -83,6 +85,7 @@ const TimelineUnstyled = ({ className, isDesktop }) => {
     />,
     <Event
       date={new Date('2018-05-02')}
+      date2={new Date('2018-08-20')}
       type="work"
       isLeft={isDesktop}
       icon={genesysLogo}
@@ -96,7 +99,8 @@ const TimelineUnstyled = ({ className, isDesktop }) => {
       isDesktop={isDesktop}
     />,
     <Event
-      date={new Date('2018-05-02')}
+      date={new Date('2017-09-02')}
+      date2={new Date('2017-12-02')}
       type="work"
       isLeft={isDesktop}
       icon={uoftLogo}

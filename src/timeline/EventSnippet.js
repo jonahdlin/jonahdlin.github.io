@@ -8,6 +8,7 @@ import {
   TIMELINE_EVENT_POINTER_RADIUS,
   TIMELINE_ICON_DIAMETER,
   monthsMap,
+  monthsAbbrevMap,
 } from '../constants/constants';
 import {
   BOX_SHADOW,
@@ -18,18 +19,29 @@ import {
   DARK_GREY_2,
 } from '../constants/theme';
 
-const EventSnippetUnstyled = ({ className, date, title, isLeft }) => {
-  const month = monthsMap[date.getMonth()];
-  const year = date.getFullYear();
+const EventSnippetUnstyled = ({ className, date, date2, title, isLeft }) => {
+  let dateString = '';
+  if (date2 === undefined) {
+    const month = monthsMap[date.getMonth()];
+    const year = date.getFullYear();
+    dateString = `${month} ${year}`;
+  } else {
+    const month1 = monthsAbbrevMap[date.getMonth()];
+    const year1 = date.getFullYear();
+    const month2 = monthsAbbrevMap[date2.getMonth()];
+    const year2 = date2.getFullYear();
+    if (year1 === year2) {
+      dateString = `${month1} - ${month2} ${year1}`;
+    } else {
+      dateString = `${month1} ${year1} - ${month2} ${year2}`;
+    }
+  }
 
   return (
     <div className={className}>
       <div className="event-snippet-content">
         <div className="event-snippet-title">{title}</div>
-        <div
-          className="event-snippet-date"
-          date={date}
-        >{`${month} ${year}`}</div>
+        <div className="event-snippet-date">{dateString}</div>
       </div>
     </div>
   );

@@ -85,6 +85,16 @@ const ProjectsUnstyled = ({ className, isDesktop }) => {
       <div className="projects-header">Featured Projects</div>
       <div className="projects-cards-container">
         <ProjectCard
+          thumbnail={tavimThumb}
+          title="Tavim"
+          year="2020-ongoing"
+          description={tavimDesc}
+          technologies="React, Redux, TypeScript"
+          hasNoLink={true}
+          secondaryDescription={tavimSecondaryDesc}
+          isDesktop={isDesktop}
+        />
+        <ProjectCard
           thumbnail={graphHaxThumb}
           title="GraphHax"
           link="/graphhax"
@@ -97,18 +107,9 @@ const ProjectsUnstyled = ({ className, isDesktop }) => {
           thumbnail={evolutionThumb}
           title="Evolution"
           year="2019-ongoing"
+          link="/evolution"
           description="Evolution simulator where creatures with randomized traits compete for food to stay alive."
           technologies="Canvas, React"
-          isDesktop={isDesktop}
-        />
-        <ProjectCard
-          thumbnail={tavimThumb}
-          title="Tavim"
-          year="2020-ongoing"
-          description={tavimDesc}
-          technologies="React, Redux, TypeScript"
-          hasNoLink={true}
-          secondaryDescription={tavimSecondaryDesc}
           isDesktop={isDesktop}
         />
       </div>

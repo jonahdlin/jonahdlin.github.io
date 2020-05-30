@@ -103,8 +103,9 @@ const ProjectCard = styled(ProjectCardUnstyled)`
       position: absolute;
       width: 100%;
       height: 100%;
-      -webkit-backface-visibility: hidden; /* Safari */
+      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      -webkit-transform: rotateY(0deg);
 
       transition: ${HIGHLIGHT_TRANSITION};
       border: 1px solid ${LIGHT_GREY_3};
@@ -120,7 +121,7 @@ const ProjectCard = styled(ProjectCardUnstyled)`
       position: absolute;
       width: 100%;
       height: 100%;
-      -webkit-backface-visibility: hidden; /* Safari */
+      -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       background-color: white;
       transform: rotateY(180deg);

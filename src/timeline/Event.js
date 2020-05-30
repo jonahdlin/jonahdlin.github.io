@@ -9,6 +9,7 @@ import {
   TIMELINE_ICON_DIAMETER,
   monthsMap,
   EVENT_DESCRIPTION_BULLET,
+  monthsAbbrevMap,
 } from '../constants/constants';
 import {
   BOX_SHADOW,
@@ -22,6 +23,7 @@ import {
 const EventUnstyled = ({
   className,
   date,
+  date2,
   icon,
   title,
   subtitle,
@@ -29,8 +31,22 @@ const EventUnstyled = ({
   isLeft,
   isDesktop,
 }) => {
-  const month = monthsMap[date.getMonth()];
-  const year = date.getFullYear();
+  let dateString = '';
+  if (date2 === undefined) {
+    const month = monthsMap[date.getMonth()];
+    const year = date.getFullYear();
+    dateString = `${month} ${year}`;
+  } else {
+    const month1 = monthsAbbrevMap[date.getMonth()];
+    const year1 = date.getFullYear();
+    const month2 = monthsAbbrevMap[date2.getMonth()];
+    const year2 = date2.getFullYear();
+    if (year1 === year2) {
+      dateString = `${month1} - ${month2} ${year1}`;
+    } else {
+      dateString = `${month1} ${year1} - ${month2} ${year2}`;
+    }
+  }
 
   let eventDescriptions;
   if (points && points.length) {
@@ -55,7 +71,7 @@ const EventUnstyled = ({
             <div className="event-title">{title}</div>
             <div className="event-subtitle">{subtitle}</div>
           </div>
-          <div className="event-date" date={date}>{`${month} ${year}`}</div>
+          <div className="event-date">{dateString}</div>
         </div>
         {eventDescriptions}
       </div>
