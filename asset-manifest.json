@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.911bbdbf.chunk.css",
+    "main.js": "/static/js/main.68b31cb3.chunk.js",
+    "main.js.map": "/static/js/main.68b31cb3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e1a3dbad.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e1a3dbad.js.map",
+    "static/js/2.6f6a445b.chunk.js": "/static/js/2.6f6a445b.chunk.js",
+    "static/js/2.6f6a445b.chunk.js.map": "/static/js/2.6f6a445b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4290650f48c59928bd3ad4d3052ac5e6.js": "/precache-manifest.4290650f48c59928bd3ad4d3052ac5e6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.911bbdbf.chunk.css.map": "/static/css/main.911bbdbf.chunk.css.map",
+    "static/js/2.6f6a445b.chunk.js.LICENSE.txt": "/static/js/2.6f6a445b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/crossword.b5c5ab66.png",
+    "static/media/genesysLogo.png": "/static/media/genesysLogo.c132faff.png",
+    "static/media/github.svg": "/static/media/github.ce864554.svg",
+    "static/media/graphHaxThumb.png": "/static/media/graphHaxThumb.141fae46.png",
+    "static/media/headshot.jpg": "/static/media/headshot.c061a500.jpg",
+    "static/media/linkedin.svg": "/static/media/linkedin.8e210869.svg",
+    "static/media/resume.pdf": "/static/media/resume.f8f05ffd.pdf",
+    "static/media/tavimThumb.png": "/static/media/tavimThumb.2102b9da.png",
+    "static/media/uoftLogo.png": "/static/media/uoftLogo.11ec10a5.png",
+    "static/media/wishLogo.png": "/static/media/wishLogo.61da6eee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e1a3dbad.js",
+    "static/js/2.6f6a445b.chunk.js",
+    "static/css/main.911bbdbf.chunk.css",
+    "static/js/main.68b31cb3.chunk.js"
+  ]
+}
