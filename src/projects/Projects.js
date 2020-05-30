@@ -97,7 +97,7 @@ const ProjectsUnstyled = ({ className, isDesktop }) => {
         <ProjectCard
           thumbnail={graphHaxThumb}
           title="GraphHax"
-          link="/graphhax"
+          link="/graph"
           year="2017"
           description={graphHaxDesc}
           technologies="Canvas, JS, jQuery"
